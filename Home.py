@@ -5,7 +5,7 @@ from PIL import Image
 st.set_page_config(
     page_title="Zeel Thumar | Portfolio",
     layout="centered",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"
 )
 
 intro_image = Image.open("images/intro-bg.png")
@@ -251,7 +251,8 @@ st.markdown("- Implemented advanced machine learning algorithms for in-depth sal
 
 st.markdown("")
 
-ui.badges(badge_list=[("Selenium", "default"),("Scikit - learn", "default"),("Random Forest", "default"),("Pandas", "default"),("Numpy", "default"),("Seaborn", "default"),("Matplotlib", "default")], class_name="flex gap-4", key="badges1")
+with st.expander("Tech Stack Used"):
+    st.markdown("**:gray[Selenium  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Scikit learn  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Random Forest &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Pandas  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Numpy  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Seaborn  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Matplotlib]**")
 
 # Smart Chat Insights
 st.subheader(":gray[Smart Chat Insights]")
@@ -260,7 +261,8 @@ st.markdown("- Demonstrated proficiency in Natural Language Processing by incorp
 
 st.markdown("")
 
-ui.badges(badge_list=[("LLM's", "default"),("Vector Database", "default"),("SpaCy", "default"),("Hugging Face", "default"),("Streamlit", "default"),("Knowledge Graph", "default")], class_name="flex gap-4", key="badges2")
+with st.expander("Tech Stack Used"):
+    st.markdown("**:gray[LLM  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Vector Database  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  SpaCy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Hugging Face  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Streamlit  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Knowledge Graph  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Matplotlib]**")
 
 # Admission Management System
 st.subheader(":gray[Admission Management System]")
@@ -268,5 +270,6 @@ st.markdown("- Reduced human effort in manually filling forms and managing the a
 st.markdown("- User Interface designed with bootstrap, PHP for backend logic, MySQL as a database all together provided an appropriate abstraction to the end user with multiple functionalities.")
 
 st.markdown("")
+with st.expander("Tech Stack Used"):
+    st.markdown("**:gray[PHP  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Bootstrap  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  MySQL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Javascript  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  HTML  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  CSS]**")
 
-ui.badges(badge_list=[("PHP", "default"),("Bootstrap", "default"),("MySQL", "default"),("Multi - Tenant Dashboards", "default")], class_name="flex gap-4", key="badges3")
