@@ -55,7 +55,7 @@ cols = st.columns(3)
 with cols[0]:
     ui.metric_card(title="Visualization", content="BI Tools", description="Power BI, Tableau, Metabase, Superset", key="card1")
 with cols[1]:
-    ui.metric_card(title="Machine Learning", content="Stat. Models", description="Scikit learn, Numpy, Pandas, Seaborn", key="card2")
+    ui.metric_card(title="Machine Learning", content="ML Models", description="XGBoost, KNN, K-means, Ensemble models", key="card2")
 with cols[2]:
     ui.metric_card(title="Natural language", content="LLM", description="Hugging Face, Langchain, OpenAI, Rasa", key="card3")
 
@@ -245,7 +245,7 @@ with col3:
     st.write("NLP")
     st.write("Docker")
 with col4:
-    st.write("Time Series Forecasting")
+    st.write("Forecasting")
     st.write("Git")
 
 st.subheader(":gray[Libraries and Frameworks]")
