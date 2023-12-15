@@ -2,23 +2,72 @@ import streamlit as st
 import streamlit_shadcn_ui as ui
 from PIL import Image
 
+# Add Google Fonts link to the HTML header
+google_fonts_link = '<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">'
+
 st.set_page_config(
     page_title="Zeel Thumar | Portfolio",
     layout="centered",
     initial_sidebar_state="collapsed"
 )
 
+st.markdown(google_fonts_link, unsafe_allow_html=True)
+# Use custom CSS to set the font to Roboto and make it bold
+html_code = """
+<style>
+    h1 {
+        font-family: 'Poppins';
+        font-weight: 600;
+        letter-spacing: -2px;
+        font-size: 80px;
+        line-height: 0.9em;
+    }
+    p, h3, h2, li{
+        font-family: 'Poppins';
+    }
+    /* Media query for larger screens, further adjust line height */
+    @media screen and (max-width: 1200px) {
+    h1 {
+        line-height: 0.6;
+    }
+    @media screen and (max-width: 768px) {
+    h1 {
+        line-height: 0.8;
+        font-size: 45px;
+    }
+}
+</style>
+"""
+
+# Render the HTML code to apply the styling
+st.markdown(html_code, unsafe_allow_html=True)
+
 intro_image = Image.open("images/intro-bg.png")
 st.image(image=intro_image)   
 
+st.title(":gray[Hey there!] &nbsp;👋 &nbsp;")
+st.title(":gray[I'm] Zeel Thumar.")
 
-st.title(":gray[Hey there!] &nbsp; :wave: &nbsp; :gray[I'm] Zeel Thumar.")
+st.markdown("")
 
-url = 'https://stackoverflow.com'
+# into cards
+cols = st.columns(3)
+with cols[0]:
+    ui.metric_card(title="Visualization", content="BI Tools", description="Power BI, Tableau, Metabase, Superset", key="card1")
+with cols[1]:
+    ui.metric_card(title="Machine Learning", content="Stat. Models", description="Scikit learn, Numpy, Pandas, Seaborn", key="card2")
+with cols[2]:
+    ui.metric_card(title="Natural language", content="LLM", description="Hugging Face, Langchain, OpenAI, Rasa", key="card3")
 
-st.write("I am a **:blue[Data Science Expert]** who have specialization in **:blue[deep learning, machine learning, and natural language processing]** with a solid foundation in **:blue[data analysis, statistics, and programming]**. Moreover I also **:blue[fine-tune LLM's]** like **:blue[BERT, LLaMA]** for various use cases. I bring a proven track record of delivering practical solutions.")
+st.markdown("")
 
-st.write(" In addition to my technical skills, I excel in **:blue[MLOps]**, possess strong analytical thinking, and demonstrate leadership capabilities. I am skilled at seamlessly **:blue[integrating]** machine learning **:blue[models into production environments]** and adept at breaking down complex problems to derive data-driven solutions. ")
+# get in touch url links
+url_mail = 'mailto:zeelthumar04@gmail.com'
+url_linkedIn = 'https://www.linkedin.com/in/zeel-thumar-522727213'
+url_GitHub = 'https://github.com/zeel-04'
+url_X = 'https://twitter.com/zeel_thumar'
+
+st.write("I am a Data Science practitioner with a flair for deep learning, machine learning, and natural language processing. Specialized in fine-tuning LLMs like BERT and LLaMA for diverse use cases, I bring a track record of delivering practical solutions. Beyond technical prowess, I excel in MLOps, possess strong analytical thinking, and showcase leadership capabilities. Skillful at integrating ML models into production, I thrive on breaking down complex problems for data-driven solutions.")
 
 st.divider()
 #Social media icons
@@ -28,7 +77,7 @@ col1, col2, col3, col4 = st.columns([1,1,1,1])
 
 with col1:
     st.markdown(f'''
-    <a href={url}><button style='
+    <a href={url_mail}><button style='
     background-color: #262730;
     outline: None;
     border:None;
@@ -57,7 +106,7 @@ with col1:
 
 with col2:
     st.markdown(f'''
-    <a href={url}><button style='
+    <a href={url_linkedIn}><button style='
     background-color: #262730;
     outline: None;
     border:None;
@@ -86,7 +135,7 @@ with col2:
 
 with col3:
     st.markdown(f'''
-    <a href={url}><button style='
+    <a href={url_GitHub}><button style='
     background-color: #262730;
     outline: None;
     border:None;
@@ -115,7 +164,7 @@ with col3:
 
 with col4:
     st.markdown(f'''
-    <a href={url}><button style='
+    <a href={url_X}><button style='
     background-color: #262730;
     outline: None;
     border:None;
@@ -242,6 +291,7 @@ with col4:
 
 st.divider()
 
+# Project Section
 st.header("🚀 &nbsp; Projects")
 
 # Salary Prediction Engine
@@ -252,7 +302,20 @@ st.markdown("- Implemented advanced machine learning algorithms for in-depth sal
 st.markdown("")
 
 with st.expander("Tech Stack Used"):
-    st.markdown("**:gray[Selenium  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Scikit learn  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Random Forest &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Pandas  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Numpy  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Seaborn  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Matplotlib]**")
+
+    col1, col2, col3, col4 = st.columns(4)
+
+    with col1:
+        st.write("**:gray[Selenium]**")
+        st.write("**:gray[Numpy]**")
+    with col2:
+        st.write("**:gray[Scikit learn]**")
+        st.write("**:gray[Seaborn]**")
+    with col3:
+        st.write("**:gray[Random Forest]**")
+        st.write("**:gray[Matplotlib]**")
+    with col4:
+        st.write("**:gray[Pandas]**")
 
 # Smart Chat Insights
 st.subheader(":gray[Smart Chat Insights]")
@@ -262,7 +325,19 @@ st.markdown("- Demonstrated proficiency in Natural Language Processing by incorp
 st.markdown("")
 
 with st.expander("Tech Stack Used"):
-    st.markdown("**:gray[LLM  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Vector Database  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  SpaCy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Hugging Face  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Streamlit  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Knowledge Graph  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Matplotlib]**")
+
+    col1, col2, col3, col4 = st.columns(4)
+
+    with col1:
+        st.write("**:gray[LLM]**")
+        st.write("**:gray[Streamlit]**")
+    with col2:
+        st.write("**:gray[Vector Database]**")
+        st.write("**:gray[Knowledge Graph]**")
+    with col3:
+        st.write("**:gray[SpaCy]**")
+    with col4:
+        st.write("**:gray[Hugging Face]**")
 
 # Admission Management System
 st.subheader(":gray[Admission Management System]")
@@ -271,5 +346,29 @@ st.markdown("- User Interface designed with bootstrap, PHP for backend logic, My
 
 st.markdown("")
 with st.expander("Tech Stack Used"):
-    st.markdown("**:gray[PHP  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Bootstrap  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  MySQL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Javascript  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  HTML  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  CSS]**")
 
+    col1, col2, col3, col4 = st.columns(4)
+
+    with col1:
+        st.write("**:gray[PHP]**")
+        st.write("**:gray[HTML]**")
+    with col2:
+        st.write("**:gray[Bootstrap]**")
+        st.write("**:gray[CSS]**")
+    with col3:
+        st.write("**:gray[MySQL]**")
+    with col4:
+        st.write("**:gray[Javascript]**")
+
+# Education
+st.header("📒 &nbsp; Education")
+
+st.markdown("")
+
+data = {
+    'Institution' : ['BAPS Swaminarayan Vidhyamandir', 'BAPS Swaminarayan Vidhyamandir', 'CHARUSAT University'],
+    'Level' : ['10th grade', '12th Grade', 'Undergraduate'],
+    'Percentage' : ['92', '76', '94']
+}
+
+st.dataframe(data=data, use_container_width=True)
