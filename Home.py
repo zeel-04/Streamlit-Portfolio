@@ -22,6 +22,9 @@ html_code = """
         font-size: 80px;
         line-height: 0.9em;
     }
+    streamlit-expanderHeader>st-emotion-cache-ompuv2>p{
+        color: red;
+    }
     p, h3, h2, li{
         font-family: 'Poppins';
     }
@@ -217,6 +220,7 @@ st.divider()
 
 #Skills
 st.header("🛠 &nbsp; Skills")
+
 st.subheader(":gray[Programming]")
 
 col1, col2, col3, col4 = st.columns(4)
@@ -372,3 +376,9 @@ data = {
 }
 
 st.dataframe(data=data, use_container_width=True)
+
+#experiment
+
+
+
+
